@@ -241,6 +241,7 @@ for (const p of PRESETS) {
   b.onclick = () => {
     if (p.dog) { setModel(p.get(), true); syncJSON(); return; }
     spec = { ...DEFAULT_SPEC, ...p.get() };
+    currentIsDog = false;   // a humanoid preset replaces the dog preview
     buildPanel();
     rebuild();
   };
